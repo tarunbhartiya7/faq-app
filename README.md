@@ -26,3 +26,15 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+Publish on github pages
+-----------------------
+Run:
+npm i -g angular-cli-ghpages
+
+ng build --prod --base-href https://tarunbhartiya7.github.io/faq-app/
+
+ngh
+
+Go to https://tarunbhartiya7.github.io/faq-app/ once you get successfully published....Hurray!!!!
