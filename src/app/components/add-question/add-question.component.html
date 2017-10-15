@@ -1,0 +1,29 @@
+<div class="card">
+  <div class="card-header">
+    Add New FAQ
+  </div>
+  <div class="card-block">
+    <!-- Template Driven Form -->
+    <form novalidate #myForm="ngForm" (ngSubmit)="onSubmit(myquestion); myForm.reset()">
+      <div class="form-group">
+        <h5 for="question">Question Text</h5>
+        <input type="text" class="form-control" id="question" for="question" name="question" [(ngModel)]="faq.question" #myquestion="ngModel"
+           required>
+        <div *ngIf="myquestion.errors?.required && myquestion.touched" class="alert alert-danger">
+          Question is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <h5 for="answer">Question Answer</h5>
+        <input type="text" class="form-control" for="answer" name="answer" [(ngModel)]="faq.answer" #myanswer="ngModel" id="answer"
+          required>
+        <div *ngIf="myanswer.errors?.required && myanswer.touched" class="alert alert-danger">
+          Answer is required
+        </div>
+      </div>
+
+      <input type="submit" value="Submit" class="btn btn-primary" [disabled]="!myForm.valid">
+    </form>
+  </div>
+</div>
